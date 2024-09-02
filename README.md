@@ -11,4 +11,6 @@ An e-commerce platform for selling products online.
 * Node.js/Django,
 * MySQL,
 * Cloudflare.
+
+  
 **Status: In progress.**
