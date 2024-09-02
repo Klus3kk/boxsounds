@@ -8,7 +8,7 @@ An e-commerce platform for selling products online.
 * Admin panel.
 ## Technologies
 * React/Vue.js/Angular,
-* Node.js/Django/Spring Boot,
-* PostgreSQL/MySQL.
-
+* Node.js/Django,
+* MySQL,
+* Cloudflare.
 **Status: In progress.**
