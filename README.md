@@ -12,5 +12,5 @@ An e-commerce platform for selling products online.
 * MySQL,
 * Cloudflare.
 
-  
+---  
 **Status: In progress.**
