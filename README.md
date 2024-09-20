@@ -14,4 +14,11 @@ An e-commerce platform for selling custom vinyls/CDs online.
 
 * Next.js,
 * Tailwind,
-* React.
+* React,
+* TypeScript.
+
+### Important commands
+
+```bash
+pnpm dlx create-next-app@latest
+```
