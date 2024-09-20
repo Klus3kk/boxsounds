@@ -1,6 +1,6 @@
-# E-commerce-Store
+# BoxSounds
 
-An e-commerce platform for selling products online.
+An e-commerce platform for selling custom vinyls/CDs online.
 
 ## Features
 
