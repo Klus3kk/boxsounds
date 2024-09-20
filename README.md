@@ -12,7 +12,6 @@ An e-commerce platform for selling products online.
 
 ## Technologies
 
-* React,
-* Node.js,
-* MySQL,
-* Cloudflare.
+* Next.js,
+* Tailwind,
+* React.
