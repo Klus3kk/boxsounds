@@ -17,7 +17,7 @@ An e-commerce platform for selling custom vinyls/CDs online.
 * React,
 * TypeScript.
 
-### Important commands
+## Important commands (ignore this)
 
 ```bash
 pnpm dlx create-next-app@latest
