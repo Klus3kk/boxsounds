@@ -22,5 +22,5 @@ An e-commerce platform for selling custom vinyls/CDs online.
 ```bash
 pnpm dlx create-next-app@latest
 
-npx shadcn-ui@latest init
+npx shadcn@latest init
 ```
