@@ -9,6 +9,12 @@ const config: Config = {
   ],
   theme: {
   	extend: {
+		spacing: {
+			'-65.75': '-16.7rem',
+		},
+		screens: {
+			'md-lg': '1024px',
+		},
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
