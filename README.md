@@ -24,4 +24,6 @@ An e-commerce platform for selling custom vinyls/CDs online.
 pnpm dlx create-next-app@latest
 
 npx shadcn@latest init
+
+npx shadcn@latest add (button for example)
 ```
