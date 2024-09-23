@@ -4,76 +4,76 @@ import { HTMLAttributes, useEffect, useRef, useState } from "react";
 import MaxWidthWrapper from "./MaxWidthWrapper";
 import { useInView } from "framer-motion";
 import { cn } from "@/lib/utils";
-import { Phone } from "lucide-react";
 import Vinyl from "./Vinyl";
 
 
-const VINYLS =  [
-    "/testimonials/1.jpg",
-    "/testimonials/2.jpg",
-    "/testimonials/3.jpg",
-    "/testimonials/4.jpg",
-    "/testimonials/5.jpg",
-    "/testimonials/6.jpg",
+const VINYLS = [
+    '/testimonials/1.jpg',
+    '/testimonials/2.jpg',
+    '/testimonials/3.jpg',
+    '/testimonials/4.jpg',
+    '/testimonials/5.jpg',
+    '/testimonials/6.jpg',
 ]
 
 function splitArray<T>(array: Array<T>, numParts: number) {
     const result: Array<Array<T>> = []
-
-    for (let i= 0; i < array.length; i++) {
-        const index = i % numParts
-        if (!result[index]) {
-            result[index] = []
-        }
-        result[index].push(array[i])
+  
+    for (let i = 0; i < array.length; i++) {
+      const index = i % numParts
+      if (!result[index]) {
+        result[index] = []
+      }
+      result[index].push(array[i])
     }
-
+  
     return result
 }
+  
 
 
 function ReviewColumn({
     reviews,
     className,
     reviewClassName,
-    msPerPixel = 0
-}: {
+    msPerPixel = 0,
+  }: {
     reviews: string[]
-    className?: string // optional
-    reviewClassName?: (reviewIndex: number) => string 
-    msPerPixel?: number 
-}) {
+    className?: string
+    reviewClassName?: (reviewIndex: number) => string
+    msPerPixel?: number
+  }) {
     const columnRef = useRef<HTMLDivElement | null>(null)
     const [columnHeight, setColumnHeight] = useState(0)
     const duration = `${columnHeight * msPerPixel}ms`
-    
+  
     useEffect(() => {
-        if(!columnRef.current) return 
-
-        const resizeObserver = new window.ResizeObserver(() => {
-            setColumnHeight(columnRef.current?.offsetHeight ?? 0)
-        })
-
-        resizeObserver.observe(columnRef.current)
-
-        return () => {
-            resizeObserver.disconnect()
-        }
+      if (!columnRef.current) return
+  
+      const resizeObserver = new window.ResizeObserver(() => {
+        setColumnHeight(columnRef.current?.offsetHeight ?? 0)
+      })
+  
+      resizeObserver.observe(columnRef.current)
+  
+      return () => {
+        resizeObserver.disconnect()
+      }
     }, [])
-
+  
     return (
-        <div 
-            ref={columnRef} 
-            className={cn("animated-marquee space-y-8 py-4", className)}
-            style={{'--marquee-duration': duration} as React.CSSProperties}>
-                {reviews.concat(reviews).map((imgSrc, reviewIndex) => (
-                    <Review 
-                    key={reviewIndex} 
-                    className={reviewClassName?.(reviewIndex % reviews.length)}
-                    imgSrc={imgSrc}
-                />
-                ))}
-            </div>
+      <div
+        ref={columnRef}
+        className={cn('animate-marquee space-y-8 py-4', className)}
+        style={{ '--marquee-duration': duration } as React.CSSProperties}>
+        {reviews.concat(reviews).map((imgSrc, reviewIndex) => (
+          <Review
+            key={reviewIndex}
+            className={reviewClassName?.(reviewIndex % reviews.length)}
+            imgSrc={imgSrc}
+          />
+        ))}
+      </div>
     )
 }
 
@@ -130,7 +130,11 @@ function ReviewGrid() {
                 msPerPixel={10}
             />
           </>
-        ) : null}</div>
+        ) : null}
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-slate-100"/>
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-32 bg-gradient-to-t from-slate-100"/>
+        
+        </div>
     )
 }
 

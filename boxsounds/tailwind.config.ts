@@ -63,16 +63,25 @@ const config: Config = {
   			sm: 'calc(var(--radius) - 4px)'
   		},
 		keyframes: {
+			"fade-in": {
+				from: {
+					opacity: '0',
+				},
+				to: {
+					opacity: '1',
+				}
+			},
 			marquee: {
 				'100%': {
 					transform: 'translateY(-50%)'
-				}
-			}
+				},
+			},
 		},
 		animation: {
-			"marquee": 'marquee var(--marquee-duration) linear infinite',
-		}
-  	}
+			marquee: 'marquee var(--marquee-duration) linear infinite',
+        	'fade-in': 'fade-in 0.5s linear forwards',
+		},
+  	},
   },
   plugins: [require("tailwindcss-animate")],
 };
