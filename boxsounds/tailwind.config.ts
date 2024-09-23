@@ -61,7 +61,17 @@ const config: Config = {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
-  		}
+  		},
+		keyframes: {
+			marquee: {
+				'100%': {
+					transform: 'translateY(-50%)'
+				}
+			}
+		},
+		animation: {
+			"marquee": 'marquee var(--marquee-duration) linear infinite',
+		}
   	}
   },
   plugins: [require("tailwindcss-animate")],
